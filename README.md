@@ -5,8 +5,13 @@ http://referer-check.herokuapp.com/
 https://referer-check.herokuapp.com/
 
 
-Target Blank
+Google Doc Link
 
-[http://referer-check.herokuapp.com/](http://referer-check.herokuapp.com/){:target="_blank"}
+https://docs.google.com/document/d/1WxxVCAGRxl_llSjnRvw6OkfSy3ud2Er7MAGp6mxvUnA/edit
 
-[https://referer-check.herokuapp.com/](https://referer-check.herokuapp.com/){:target="_blank"}
+
+Dropbox Paper link
+
+https://paper.dropbox.com/doc/referer-check--AiZjfEkJgX5feFOHAn6pA7~FAg-cmmHm5OTZOHadc9skH5zD
+
+
