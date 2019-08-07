@@ -15,3 +15,8 @@ Dropbox Paper link
 https://paper.dropbox.com/doc/referer-check--AiZjfEkJgX5feFOHAn6pA7~FAg-cmmHm5OTZOHadc9skH5zD
 
 
+他ページ
+
+http://referer-check.herokuapp.com/pages
+
+http://referer-check.herokuapp.com/pages?test=test
