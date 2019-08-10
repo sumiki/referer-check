@@ -17,7 +17,7 @@ class SendgridController < ApplicationController
       if update_status.include?(item['event'])
         #p item.permit!.to_h.to_s.length
       end
-    end
+    end if params["_json"]
     
     render plain: 'Sendgrid'
   end
