@@ -8,7 +8,7 @@ class SendgridController < ApplicationController
   end
   
   def create
-    SendgridMailer.send_test('sumikio@gmail.com').deliver_now
+    SendgridMailer.send_test(params[:email]).deliver_now if params[:email].present?
     
     redirect_to '/sendgrid'
   end
