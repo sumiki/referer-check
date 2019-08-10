@@ -1,7 +1,9 @@
 class SendgridController < ApplicationController
   
   skip_before_action :verify_authenticity_token, :only => [:callback]
-  
+  before_action :authenticate, :except => [:callback]
+
+
   def index
   end
   
@@ -23,6 +25,15 @@ class SendgridController < ApplicationController
     end if params["_json"]
     
     render plain: 'Sendgrid'
+  end
+  
+  private
+
+  def authenticate
+    return if Rails.env == "test"
+    authenticate_or_request_with_http_basic do |username, password|
+      (username == "sumiki" && password == "hmb")
+    end
   end
   
 end
