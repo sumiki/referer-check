@@ -14,7 +14,8 @@ class SendgridController < ApplicationController
   end
   
   def callback
-    
+  
+    update_status = ["deferred", "bounce", "dropped"]
     params["_json"].each do |item|
       #p item['event']
       logger.debug item.permit!.to_h
