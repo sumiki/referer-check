@@ -11,11 +11,5 @@
     <th>Event</th>
     <th>Reason</th>
   </tr>
-  <% @email_histories.each do |history| %>
-  <tr>
-    <td><%= history.email %></td>
-    <td><%= history.event %></td>
-    <td><%= history.reason %></td>
-  </tr>
-  <% end %>
+  <%= render @email_histories  %>
 </table>

@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     match :callback, on: :collection, via: [:get, :post]
   end
   
-  
+  mount ActionCable.server => '/cable'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

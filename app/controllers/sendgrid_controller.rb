@@ -18,7 +18,7 @@ class SendgridController < ApplicationController
   end
   
   def callback
-  
+    email_histories = []
     update_status = ["deferred", "bounce", "dropped"]
     params["_json"].each do |item|
       email_history = EmailHistory.new
@@ -26,8 +26,9 @@ class SendgridController < ApplicationController
       email_history.reason = item.permit!.to_h
       email_history.event = item["event"]
       email_history.save
+      email_histories << email_history
     end if params["_json"]
-    
+    ActionCable.server.broadcast 'room_channel', email_histories
     render plain: 'Sendgrid'
   end
   
