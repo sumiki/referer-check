@@ -1,6 +1,6 @@
 class EmailHistory < ApplicationRecord
   
-  enum status: {
+  enum event: {
     sent: 0,
     processed: 1,
     deferred: 2,
