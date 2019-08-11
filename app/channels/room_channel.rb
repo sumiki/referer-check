@@ -8,6 +8,6 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak
-    ActionCable.server.broadcast 'room_channel', {}
+    ActionCable.server.broadcast 'room_channel', EmailHistory.new
   end
 end

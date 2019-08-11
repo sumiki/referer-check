@@ -28,7 +28,6 @@ class SendgridController < ApplicationController
       email_history.save
       email_histories << email_history
     end if params["_json"]
-    ActionCable.server.broadcast 'room_channel', email_histories
     render plain: 'Sendgrid'
   end
   

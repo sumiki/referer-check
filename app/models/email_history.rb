@@ -15,4 +15,6 @@ class EmailHistory < ApplicationRecord
     group_resubscribe: 11,
   }
   
+  after_create_commit { MessageBroadcastJob.perform_later self }
+  
 end
