@@ -5,11 +5,15 @@ class SendgridController < ApplicationController
 
 
   def index
+    @email_histories = EmailHistory.order('id desc').all
   end
   
   def create
     SendgridMailer.send_test(params[:email]).deliver_now if params[:email].present?
-    
+    email_history = EmailHistory.new
+    email_history.email = params[:email]
+    email_history.event = 'sent'
+    email_history.save
     redirect_to '/sendgrid'
   end
   
@@ -17,12 +21,11 @@ class SendgridController < ApplicationController
   
     update_status = ["deferred", "bounce", "dropped"]
     params["_json"].each do |item|
-      #p item['event']
-      logger.debug item.permit!.to_h
-      pp item.permit!.to_h
-      if update_status.include?(item['event'])
-        #p item.permit!.to_h.to_s.length
-      end
+      email_history = EmailHistory.new
+      email_history.email = item['email']
+      email_history.reason = item.permit!.to_h
+      email_history.event = item["event"]
+      email_history.save
     end if params["_json"]
     
     render plain: 'Sendgrid'
