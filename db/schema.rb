@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2019_08_11_022930) do
     t.string "email"
     t.integer "event"
     t.json "reason"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -4,6 +4,7 @@ class CreateEmailHistories < ActiveRecord::Migration[5.2]
       t.string :email
       t.integer :event
       t.json :reason
+      t.timestamps
     end
   end
 end
