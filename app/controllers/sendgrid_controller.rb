@@ -36,7 +36,7 @@ class SendgridController < ApplicationController
   def authenticate
     return if Rails.env == "test"
     authenticate_or_request_with_http_basic do |username, password|
-      (username == "sumiki" && password == "hmb")
+      (username == "ene" && password == "pass")
     end
   end
   
